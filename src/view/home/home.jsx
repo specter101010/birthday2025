@@ -17,6 +17,8 @@ import {
   ArrowBigRight
 } from "lucide-react";
 import './home.css'
+import { useNavigate } from "react-router-dom";
+
 
 const strokeColor = "#c026d3";
 
@@ -210,6 +212,8 @@ const conversationFlow = {
 
 
 function Home() {
+const navigate = useNavigate();
+
   const [currentKey, setCurrentKey] = useState("start");
   const [showButtons, setShowButtons] = useState(false);
   const [clicked, setClicked] = useState(false);
@@ -316,9 +320,7 @@ useEffect(() => {
         <div className={`mt-8 ${buttonAnim}`}>
           <RippleButton
             className="px-6 py-3 rounded-full bg-yellow-400 text-black font-semibold shadow-md active:scale-95 transition-all duration-150 animate-pulse"
-            onClick={() => {
-              window.location.href = "/hadiah";
-            }}
+            onClick={() => navigate("/hadiah")}
           >
             <Gift stroke={strokeColor} className="w-5 h-5" /> Lihat Hadiahnya!
           </RippleButton>

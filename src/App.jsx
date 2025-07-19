@@ -5,6 +5,8 @@ import './App.css'
 import Home from './view/home/home'
 import Hadiah from './pages/Hadiah'
 
+
+
 function App() {
   const [isMobile, setIsMobile] = useState(false)
 
